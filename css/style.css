@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    cursor: url("/img/cursor_a.png"), auto;
+}
+
+#game-screen {
+    position: relative;
+    overflow: hidden;
+}
+
+#start-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.797);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #ffffff;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 10;
+}
+
+#logo {
+    width: 50%;
+    margin-bottom: 4em;
+}
+
+#start-button {
+    font-size: 1.5em;
+    padding: .5em 1em;
+    background-color: #6700e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: url("/img/cursor_d.png"), auto;
+    transition: 0.3s ease;
+    animation: glow 1.5s infinite alternate;
+}
+
+#start-button:hover {
+    background-color: #3a0082;
+}
+
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url("/img/gameover-background2.gif");
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 10;
+}
+
+#game-over-screen h1 {
+    font-family: Arial, sans-serif;
+    font-size: 4em;
+    margin-bottom: 30px;
+    animation: fade-in 1.5s ease forwards;
+}
+
+#retry-button {
+    font-size: 1.5em;
+    padding: .5em 1em;
+    background-color: #e50000;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: url("/img/cursor_d.png"), auto;
+    transition: 0.3s ease;
+    animation: fade-in 1.5s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+#retry-button:hover {
+    background-color: #820000;
+}
+
+#win-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url("/img/win-background.gif");
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 10;
+}
+
+#win-screen h1 {
+    font-family: Arial, sans-serif;
+    font-size: 4em;
+    margin-bottom: 30px;
+    animation: zoom-in 0.8s ease-out forwards;
+}
+
+#play-again-button {
+    font-size: 1.5em;
+    padding: .5em 1em;
+    background-color: #e50076;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: url("/img/cursor_d.png"), auto;
+    transition: 0.3s ease;
+    animation: zoom-in 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+#play-again-button:hover {
+    background-color: #82003d;
+}
+
+#popup-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50vh;
+    background-color: rgba(27, 27, 27, 0.591);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+}
+
+#popup-screen h1 {
+    font-family: Arial, sans-serif;
+    font-size: 3em;
+    margin-bottom: 50px;
+    animation: shake-horizontal 0.5s;
+}
+
+#ok-button {
+    font-size: 1.5em;
+    padding: .5em 1em;
+    background-color: #6700e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: url("/img/cursor_d.png"), auto;
+    transition: 0.3s ease;
+}
+
+#ok-button:hover {
+    background-color: #3a0082;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #6700e543, 0 0 10px #6700e543, 0 0 15px #6700e543, 0 0 20px #6700e543;
+    }
+
+    50% {
+        box-shadow: 0 0 10px #e6cdff61, 0 0 20px #e6cdff61, 0 0 30px #e6cdff61, 0 0 40px #e6cdff61;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #6700e543, 0 0 10px #6700e543, 0 0 15px #6700e543, 0 0 20px #6700e543;
+    }
+}
+
+@keyframes shake-horizontal {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
