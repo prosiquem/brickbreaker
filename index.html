@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BRICK BREAKER</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div id="start-screen">
+        <img src="/img/logo.avif" id="logo">
+        <button id="start-button">START GAME</button>
+    </div>
+
+    <figure id="game-screen"></figure>
+
+    <div id="game-over-screen">
+        <div>
+            <h1>GAME OVER</h1>
+            <button id="retry-button">RETRY</button>
+        </div>
+    </div>
+
+    <div id="win-screen">
+        <div>
+            <h1>YOU WIN</h1>
+            <button id="play-again-button">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <div id="popup-screen">
+        <div>
+            <h1>YOU HAVE LOST A LIFE</h1>
+            <button id="ok-button">OK</button>
+        </div>
+    </div>
+
+    <script src="/js/startScreen.js"></script>
+    <script src="/js/background.js"></script>
+    <script src="/js/lifes.js"></script>
+    <script src="/js/bricksData.js"></script>
+    <script src="/js/bricks.js"></script>
+    <script src="/js/player.js"></script>
+    <script src="/js/ball.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>
